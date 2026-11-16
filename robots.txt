@@ -1,0 +1,24 @@
+# トキノアト（tokinoato.com）
+# 検索エンジンとAIアシスタントの読み取りをすべて許可する
+User-agent: *
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://tokinoato.com/sitemap.xml
