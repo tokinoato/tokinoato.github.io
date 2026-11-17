@@ -179,6 +179,11 @@
   .contact .mail:hover,.contact .mail:focus-visible{background:#6E747A;color:#FFFFFF;border-color:#6E747A} /* 白地→グレーに反転。白文字との対比 4.7:1 */
 
 
+  /* APA会員ページへのリンク：ふだんは点線の下線、触れると濃くなり矢印が動く */
+  .apa{color:var(--sub);text-decoration:none;border-bottom:1px dotted var(--sub);padding-bottom:1px;transition:color .3s,border-color .3s}
+  .apa .arrow{display:inline-block;margin-left:.35em;font-size:.9em;transition:transform .3s}
+  .apa:hover,.apa:focus-visible{color:var(--ink);border-bottom:1px solid var(--ink)}
+  .apa:hover .arrow,.apa:focus-visible .arrow{transform:translate(2px,-2px)}
   /* 代表の発信（X・note） */
   .links{margin:40px 0 0;font-size:13px;letter-spacing:.25em;color:var(--sub)}
   .links a{color:var(--sub);text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:2px;transition:color .3s,border-color .3s}
@@ -250,10 +255,10 @@
     <section class="band profile" aria-labelledby="h-profile"><div class="inner reveal">
       <h2 id="h-profile">ABOUT</h2>
       <p class="name">高田ナオキ<span lang="en">NAOKI TAKADA</span></p>
-      <p class="role">トキノアト 代表 ／ <span lang="en">PHOTOGRAPHER</span><br>公益社団法人 日本広告写真家協会（APA）正会員</p>
+      <p class="role">トキノアト 代表 ／ <span lang="en">PHOTOGRAPHER</span><br><a class="apa" href="https://apa.or.jp/ph/nao/" rel="me noopener" target="_blank">公益社団法人 日本広告写真家協会（APA）正会員<span class="arrow" aria-hidden="true">↗</span></a></p>
       <p>名古屋を拠点に活動。愛知大学を卒業後、印刷会社、スタジオクロ（現 NOIR）を経て、インハウスの広告代理店にて20年以上にわたり第一線で撮影業務に従事。</p>
       <p>タレントやモデルを起用した広告から、建築、プロダクト、ゴルフ場の風景、柔道の国際大会まで、ジャンルを問わず多岐にわたる被写体と向き合う。自身の撮影に留まらず、プロジェクトの規模に応じたカメラマンチームの手配や進行管理といったディレクション業務も統括し、プロゴルフトーナメントなどの現場も担当してきた。</p>
-      <p>撮影から、広告のトーンに合わせた自然で緻密な色補正とレタッチまでをワンストップで手がける。また、美術品の撮影経験も深く、とくに繊細な光のコントロールが要求される「日本刀」の記録撮影はこれまでに200振を超える。</p>
+      <p>撮影から、広告のトーンに合わせた自然で緻密な色補正とレタッチまでをワンストップで手がける。また、美術品の撮影経験も深く、とくに繊細な光のコントロールが要求される「日本刀」の記録撮影はこれまでに200振を超える。国宝・重要文化財を中心に名刀を収めた大型の刀剣図録をはじめ、刀剣の専門書にも撮影写真が掲載されている。</p>
       <p>2027年、クリエイティブ・プロダクション「トキノアト」を始動予定。</p>
       <p class="links" lang="en"><a href="https://x.com/naografo" rel="me noopener" target="_blank">X</a><span class="sep" aria-hidden="true">/</span><a href="https://note.com/naokitakada" rel="me noopener" target="_blank">note</a></p>
     </div></section>
