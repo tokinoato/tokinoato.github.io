@@ -7,6 +7,9 @@
 <title>トキノアト｜広告写真・撮影ディレクション・美術品撮影（名古屋）</title>
 <meta name="description" content="トキノアトは名古屋を拠点にするフォトグラフィー＆クリエイティブ・プロダクション。広告撮影（人物・商品・建築・風景）、撮影ディレクション、日本刀をはじめとする美術品撮影。代表 高田ナオキ（日本広告写真家協会 正会員）。">
 <link rel="canonical" href="https://tokinoato.com/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:site_name" content="トキノアト">
@@ -98,7 +101,9 @@
     "url": "https://apa.or.jp/"
    },
    "sameAs": [
-    "https://apa.or.jp/ph/nao/"
+    "https://apa.or.jp/ph/nao/",
+    "https://x.com/naografo",
+    "https://note.com/naokitakada"
    ]
   }
  ]
@@ -173,6 +178,17 @@
   }
   .contact .mail:hover,.contact .mail:focus-visible{background:#6E747A;color:#FFFFFF;border-color:#6E747A} /* 白地→グレーに反転。白文字との対比 4.7:1 */
 
+
+  /* 代表の発信（X・note） */
+  .links{margin:40px 0 0;font-size:13px;letter-spacing:.25em;color:var(--sub)}
+  .links a{color:var(--sub);text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:2px;transition:color .3s,border-color .3s}
+  .links a:hover,.links a:focus-visible{color:var(--ink);border-color:var(--ink)}
+  .links .sep{margin:0 1.2em;color:var(--rule)}
+  /* フッター：XとnoteのマークでSNSへ（各社の公式ロゴを加工せずに使う） */
+  .sns{display:flex;justify-content:center;gap:20px;margin:2.6em 0 0;padding:0;list-style:none}
+  .sns a{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:10px;background:#FFFFFF;transition:opacity .3s}
+  .sns a:hover,.sns a:focus-visible{opacity:.7}
+  .sns img{display:block}
   .sp-only{display:none}
 
   /* FOOTER */
@@ -239,6 +255,7 @@
       <p>タレントやモデルを起用した広告から、建築、プロダクト、ゴルフ場の風景、柔道の国際大会まで、ジャンルを問わず多岐にわたる被写体と向き合う。自身の撮影に留まらず、プロジェクトの規模に応じたカメラマンチームの手配や進行管理といったディレクション業務も統括し、プロゴルフトーナメントなどの現場も担当してきた。</p>
       <p>撮影から、広告のトーンに合わせた自然で緻密な色補正とレタッチまでをワンストップで手がける。また、美術品の撮影経験も深く、とくに繊細な光のコントロールが要求される「日本刀」の記録撮影はこれまでに200振を超える。</p>
       <p>2027年、クリエイティブ・プロダクション「トキノアト」を始動予定。</p>
+      <p class="links" lang="en"><a href="https://x.com/naografo" rel="me noopener" target="_blank">X</a><span class="sep" aria-hidden="true">/</span><a href="https://note.com/naokitakada" rel="me noopener" target="_blank">note</a></p>
     </div></section>
 
     <section class="band contact tone" aria-labelledby="h-contact"><div class="inner reveal">
@@ -251,6 +268,10 @@
   <footer class="tone">
     <p class="statement">日常の中で、<br class="sp-only">やがて失われていくものを撮り続けている。<br>飾るためではなく、<br class="sp-only">それがそこに在ったことを残すために。</p>
     <p lang="en">What stood before me, as it was.</p>
+    <ul class="sns">
+      <li><a href="https://x.com/naografo" rel="me noopener" target="_blank" aria-label="X（@naografo）"><img src="/img/x.png" width="18" height="18" alt=""></a></li>
+      <li><a href="https://note.com/naokitakada" rel="me noopener" target="_blank" aria-label="note（高田ナオキ）" style="background:none"><img src="/img/note.svg" width="44" height="44" alt=""></a></li>
+    </ul>
     <p class="mark">トキノアト</p>
   </footer>
 <script>
