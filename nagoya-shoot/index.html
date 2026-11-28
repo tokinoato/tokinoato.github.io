@@ -44,7 +44,7 @@
     {"@type": "Question", "name": "ロケ撮影はできますか。", "acceptedAnswer": {"@type": "Answer", "text": "はい。屋外、施設、店舗など、撮影場所に伺います。"}},
     {"@type": "Question", "name": "名古屋で広告撮影のスタジオを使えますか。", "acceptedAnswer": {"@type": "Answer", "text": "はい。撮影の内容に合うスタジオを手配します。"}},
     {"@type": "Question", "name": "対応する地域はどこですか。", "acceptedAnswer": {"@type": "Answer", "text": "名古屋を中心に、東海三県（愛知・岐阜・三重）で承ります。遠方の場合は、出張費が発生いたします。"}},
-    {"@type": "Question", "name": "料金はどのくらいですか。", "acceptedAnswer": {"@type": "Answer", "text": "内容を伺ったうえで、お見積もりにてお答えします。"}}
+    {"@type": "Question", "name": "料金はどのくらいですか。", "acceptedAnswer": {"@type": "Answer", "text": "フォームの内容から概算をお伝えし、打ち合わせのあとにお見積もりを作成します。"}}
    ]
   },
   {
@@ -146,6 +146,40 @@
     .nav{padding:20px}
     .mail{padding:16px 24px;width:100%;text-align:center}
   }
+
+  /* 相談フォームへの入口・フッターの案内 */
+  .contact p.req{margin:24px 0 0;font-size:13px;letter-spacing:.12em}
+  .req a,.fnav a{color:var(--sub);text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:2px}
+  .req a:hover,.fnav a:hover{color:var(--ink);border-color:var(--ink)}
+  footer p.fnav{margin:0 0 1.6em;font-size:12px;letter-spacing:.12em;line-height:2.4}
+  .fnav .sep{margin:0 .8em;color:var(--rule)}
+  /* 文書のページ（運営者情報・個人情報・読み物） */
+  .page{max-width:44rem;margin:0 auto;padding:40px 24px 96px}
+  .page h1{font-size:clamp(22px,4vw,30px);margin:0 0 12px}
+  .page .lead{margin:0 0 48px;color:var(--sub);font-size:14px}
+  .doc h2{margin:56px 0 16px;font-size:17px;font-weight:600;letter-spacing:.14em;line-height:1.8}
+  .doc ul,.doc ol{margin:0 0 1.2em;padding-left:1.4em}
+  .doc li{margin:0 0 .4em}
+  .info{margin:0}
+  .info div{padding:18px 0;border-top:1px solid var(--rule)}
+  .info div:last-child{border-bottom:1px solid var(--rule)}
+  .info dt{font-size:12px;letter-spacing:.2em;color:var(--sub);margin:0 0 4px}
+  .info dd{margin:0}
+  /* 相談フォーム */
+  .form fieldset{border:0;border-top:1px solid var(--rule);margin:0;padding:24px 0}
+  .form legend{padding:0;font-weight:600;color:var(--ink);letter-spacing:.12em;float:left;width:100%;margin:0 0 12px}
+  .form legend + *{clear:both}
+  .form label.opt{display:inline-block;margin:0 1.2em .4em 0;font-size:14.5px}
+  .form input[type=text],.form textarea{width:100%;font:inherit;letter-spacing:.04em;color:var(--ink);background:#fff;
+      border:1px solid var(--band-rule);padding:10px 12px;border-radius:0}
+  .form textarea{min-height:8em;line-height:1.8}
+  .form input:focus-visible,.form textarea:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+  .form .actions{padding:32px 0 0;border-top:1px solid var(--rule);text-align:center}
+  .form button{font:inherit;font-size:14px;letter-spacing:.12em;cursor:pointer;color:var(--ink);background:#fff;
+      border:1px solid var(--ink);padding:16px 40px;margin:0 6px 12px;transition:all .3s ease}
+  .form button:hover,.form button:focus-visible{background:#6E747A;color:#fff;border-color:#6E747A}
+  .form .note{font-size:13px;color:var(--sub);margin:16px 0 0}
+  #out{display:none;margin-top:24px}
 </style>
 </head>
 <body>
@@ -161,7 +195,7 @@
     <p class="who">愛知県外の制作会社・広告代理店・企業の広報担当の方へ</p>
     <h1>名古屋・東海三県の撮影を、<br>ひとつの窓口で。</h1>
     <p class="sub">カメラマンも、スタジオも、当日の進行も。<br>現地での段取りは、すべてお任せください。</p>
-    <p class="go"><a class="mail" href="mailto:contact@tokinoato.com">撮影の相談をする</a></p>
+    <p class="go"><a class="mail" href="/request/">撮影の相談をする</a></p>
   </header>
 
   <section class="band tone"><div class="inner">
@@ -171,7 +205,7 @@
       <li><b>場所の手配</b><span>撮影内容に合わせた撮影スタジオを手配します。</span></li>
       <li><b>進行から納品</b><span>当日の進行、色補正・レタッチ、納品まで。</span></li>
     </ul>
-    <p class="small" style="margin-top:2em">人物、商品、建築、取材、イベント。<br>広告撮影全般に対応いたします。</p>
+    <p class="small" style="margin-top:2em">人物、商品、建築、取材。<br>広告撮影全般に対応いたします。</p>
   </div></section>
 
   <section class="band"><div class="inner">
@@ -182,7 +216,7 @@
   <section class="band tone"><div class="inner">
     <h2>ご依頼から納品までの流れ</h2>
     <ol class="steps">
-      <li><b>相談</b><span>何を、どこで、いつ撮るか、分かる範囲でお知らせください。</span></li>
+      <li><b>相談</b><span>何を、どこで、いつ撮るか、フォームからお知らせください。</span></li>
       <li><b>見積もりと設計</b><span>お見積もりを出し、人・場所・カットを決めます。</span></li>
       <li><b>撮影</b><span>当日の現場進行は、こちらで進めます。</span></li>
       <li><b>選定・仕上げ・納品</b><span>写真をお選びいただき、仕上げてお渡しします。</span></li>
@@ -201,20 +235,21 @@
       <dt>対応する地域はどこですか。</dt>
       <dd>名古屋を中心に、東海三県（愛知・岐阜・三重）で承ります。遠方の場合は、出張費が発生いたします。</dd>
       <dt>料金はどのくらいですか。</dt>
-      <dd>内容を伺ったうえで、お見積もりにてお答えします。</dd>
+      <dd>フォームの内容から概算をお伝えし、打ち合わせのあとにお見積もりを作成します。</dd>
     </dl>
   </div></section>
 
   <section class="band tone contact" id="contact"><div class="inner">
     <h2>まずは、撮影の内容を<br>お聞かせください</h2>
-    <p>何を、どこで、いつ撮るか。<br>決まっていないことがあっても構いません。<br>ご相談だけでも、お気軽にどうぞ。</p>
-    <a class="mail" href="mailto:contact@tokinoato.com">contact@tokinoato.com</a>
+    <p>何を、どこで、いつ撮るか。<br>フォームからお知らせください。</p>
+    <a class="mail" href="/request/">項目を選んで相談する</a>
     <p class="who-runs"><a href="/#h-profile">トキノアト 代表 高田ナオキ（日本広告写真家協会 正会員）<span aria-hidden="true">→</span></a></p>
   </div></section>
 
 </main>
 
 <footer class="tone">
+  <p class="fnav"><a href="/about/">運営者情報</a><span class="sep" aria-hidden="true">／</span><a href="/privacy/">個人情報の取り扱い</a><span class="sep" aria-hidden="true">／</span><a href="/guide/estimate/">見積もりの考え方</a></p>
   <p><a href="/">トキノアト</a></p>
   <p lang="en">Photography &amp; Creative Production</p>
 </footer>

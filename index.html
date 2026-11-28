@@ -33,7 +33,6 @@
    "description": "名古屋を拠点にするフォトグラフィー＆クリエイティブ・プロダクション。広告撮影、美術品撮影、撮影ディレクション。撮影を軸に、会社案内・採用ページ・動画の制作まで。屋号は「時の跡」と「時の後」の二つの意味を持つ。",
    "slogan": "時の跡を留め、時の後へ届ける",
    "url": "https://tokinoato.com/",
-   "email": "contact@tokinoato.com",
    "foundingDate": "2027",
    "address": {
     "@type": "PostalAddress",
@@ -52,7 +51,7 @@
    },
    "knowsAbout": [
     "広告撮影", "商品撮影", "物撮り", "人物撮影", "建築写真", "竣工写真", "風景写真",
-    "スポーツ撮影", "色補正", "レタッチ", "撮影ディレクション", "カメラマン手配", "ロケ撮影", "会社案内制作", "採用ページ制作", "動画制作", "美術品撮影", "文化財撮影", "日本刀撮影"
+    "色補正", "レタッチ", "撮影ディレクション", "カメラマン手配", "ロケ撮影", "会社案内制作", "採用ページ制作", "動画制作", "美術品撮影", "文化財撮影", "日本刀撮影"
    ],
    "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -62,7 +61,7 @@
       "@type": "OfferCatalog",
       "name": "Photography",
       "itemListElement": [
-       {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "広告撮影", "alternateName": "Commercial Photography", "description": "広告、会社案内、Webサイトなどに使う写真の撮影。人物、商品、建築、風景、スポーツ。色補正とレタッチまで手がける。"}},
+       {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "広告撮影", "alternateName": "Commercial Photography", "description": "広告、会社案内、Webサイトなどに使う写真の撮影。人物、商品、建築、風景。色補正とレタッチまで手がける。"}},
        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "美術品撮影", "alternateName": "Artwork Photography", "description": "日本刀をはじめとする美術品・文化財の記録撮影。色、形、質感を正確に記録する。"}},
        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "撮影ディレクション", "alternateName": "Photo Direction", "description": "撮影の企画立案、カメラマン・モデル・ヘアメイク・スタイリストの手配、現場の進行管理、仕上がりの品質管理を一括して担う。", "url": "https://tokinoato.com/nagoya-shoot/"}}
       ]
@@ -169,6 +168,12 @@
   .contact:not(.tone) .mail{border-color:var(--ink)}
   #photography,#creative{scroll-margin-top:0}
   .fields p.more{margin:20px 0 0;font-size:13.5px}
+  .contact p.req{margin:24px 0 0;font-size:13px;letter-spacing:.12em}
+  .req a,.fnav a{color:var(--sub);text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:2px}
+  .req a:hover,.fnav a:hover{color:var(--ink);border-color:var(--ink)}
+  footer p.fnav{font-size:12px;letter-spacing:.12em;line-height:2.4}
+  .fnav .sep{margin:0 .8em;color:var(--rule)}
+  .fields p.more + p.more{margin-top:10px}
   /* 各ページへの入口 */
   .more{margin:40px 0 0;font-size:13.5px;letter-spacing:.12em}
   .more a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--band-rule);padding-bottom:3px;transition:border-color .3s}
@@ -237,6 +242,8 @@
     .sp-only{display:block}
     .contact .mail{padding:16px 32px;width:100%}
   }
+  .em label{cursor:pointer}
+  .em input{margin-right:.5em;vertical-align:middle}
 </style>
 </head>
 <body>
@@ -253,11 +260,13 @@
       <div class="fields">
         <div>
           <h3>広告撮影<span class="en" lang="en">Commercial Photography</span></h3>
-          <p>広告、会社案内、Webサイトなどに使う写真を撮影します。人物、プロダクト、建築、風景からスポーツまで、多岐にわたる被写体に対応。媒体のトーンに合わせた自然で緻密な色補正とレタッチまで手がけます。</p>
+          <p>広告、会社案内、Webサイトなどに使う写真を撮影します。人物、プロダクト、建築、風景まで、多岐にわたる被写体に対応。媒体のトーンに合わせた自然で緻密な色補正とレタッチまで手がけます。</p>
+          <p class="more"><a href="/commercial-photo/">広告撮影を依頼する方へ<span class="arrow" aria-hidden="true">→</span></a></p>
         </div>
         <div>
           <h3>美術品撮影<span class="en" lang="en">Artwork Photography</span></h3>
           <p>日本刀をはじめとする美術品や文化財の記録撮影を行います。対象の美しさを引き出す繊細な光のコントロールにより、作品が持つ本来の色、形、質感を正確に写し取ります。</p>
+          <p class="more"><a href="/artwork/">作家・工芸家・ギャラリーの方へ<span class="arrow" aria-hidden="true">→</span></a></p>
         </div>
         <div>
           <h3>撮影ディレクション<span class="en" lang="en">Photo Direction</span></h3>
@@ -294,14 +303,14 @@
       <p>名古屋を拠点に活動。愛知大学を卒業後、印刷会社、スタジオクロ（現 NOIR）を経て、ハウスエージェンシーにて20年以上にわたり第一線で撮影業務に従事。</p>
       <p>タレントやモデルを起用した広告から、建築、プロダクト、ゴルフ場の風景、柔道の国際大会まで、ジャンルを問わず多岐にわたる被写体と向き合う。自身の撮影に留まらず、プロジェクトの規模に応じたカメラマンチームの手配や進行管理といったディレクション業務も統括し、プロゴルフトーナメントなどの現場も担当してきた。撮影を通じてグラフィックやWebの制作にも長く関わり、映像制作ではマネジメントを務めた。</p>
       <p>撮影から色補正、レタッチまでを一貫して手がける。また、美術品の撮影経験も深く、とくに繊細な光のコントロールが要求される「日本刀」の記録撮影はこれまでに200振を超える。国宝・重要文化財を中心に名刀を収めた大型の刀剣図録をはじめ、刀剣の専門書にも撮影写真が掲載されている。</p>
-      <p>2027年、クリエイティブ・プロダクション「トキノアト」を始動予定。</p>
       <p class="links" lang="en"><a href="https://x.com/naografo" rel="me noopener" target="_blank">X</a><span class="sep" aria-hidden="true">/</span><a href="https://note.com/naokitakada" rel="me noopener" target="_blank">note</a></p>
     </div></section>
 
     <section class="band contact" aria-labelledby="h-contact"><div class="inner reveal">
       <h2 id="h-contact">CONTACT</h2>
       <p>撮影および制作に関する<br class="sp-only">ご依頼・ご相談は、メールにて承ります。</p>
-      <a class="mail" href="mailto:contact@tokinoato.com">contact@tokinoato.com</a>
+      <a class="mail" href="/request/">項目を選んで相談する</a>
+      <p class="req">メール　<span class="em"><label><input type="checkbox"> 私はロボットではありません（チェックでメールアドレスを表示）</label></span></p>
     </div></section>
   </main>
 
@@ -313,6 +322,7 @@
       <li><a href="https://x.com/naografo" rel="me noopener" target="_blank" aria-label="X（@naografo）"><img src="/img/x.png" width="18" height="18" alt=""></a></li>
       <li><a href="https://note.com/naokitakada" rel="me noopener" target="_blank" aria-label="note（高田ナオキ）" style="background:none"><img src="/img/note.svg" width="44" height="44" alt=""></a></li>
     </ul>
+    <p class="fnav" style="margin-top:2.4em"><a href="/about/">運営者情報</a><span class="sep" aria-hidden="true">／</span><a href="/privacy/">個人情報の取り扱い</a><span class="sep" aria-hidden="true">／</span><a href="/guide/estimate/">見積もりの考え方</a></p>
     <p class="mark">トキノアト</p>
   </footer>
 <script>
@@ -336,6 +346,19 @@
     },{threshold:0.15});
     els.forEach(function(e){io.observe(e)});
   })();
+</script>
+<script>
+(function(){
+  var a=['contact','tokinoato.com'].join('@');
+  document.querySelectorAll('.em').forEach(function(w){
+    var c=w.querySelector('input');
+    c.addEventListener('change',function(){
+      if(!c.checked)return;
+      var l=document.createElement('a');l.href='mailto:'+a;l.textContent=a;
+      w.textContent='';w.appendChild(l);
+    });
+  });
+})();
 </script>
 </body>
 </html>
