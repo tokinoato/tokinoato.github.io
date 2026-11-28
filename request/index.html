@@ -160,7 +160,7 @@
   .form legend{padding:0;font-weight:600;color:var(--ink);letter-spacing:.12em;float:left;width:100%;margin:0 0 12px}
   .form legend + *{clear:both}
   .form label.opt{display:inline-block;margin:0 1.2em .4em 0;font-size:14.5px}
-  .form input[type=text],.form textarea{width:100%;font:inherit;letter-spacing:.04em;color:var(--ink);background:#fff;
+  .form input[type=text],.form input[type=email],.form textarea{width:100%;font:inherit;letter-spacing:.04em;color:var(--ink);background:#fff;
       border:1px solid var(--band-rule);padding:10px 12px;border-radius:0}
   .form textarea{min-height:8em;line-height:1.8}
   .form input:focus-visible,.form textarea:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
@@ -170,6 +170,8 @@
   .form button:hover,.form button:focus-visible{background:#6E747A;color:#fff;border-color:#6E747A}
   .form .note{font-size:13px;color:var(--sub);margin:16px 0 0}
   #out{display:none;margin-top:24px}
+  .em img{vertical-align:middle}
+  .em a.gm{margin-left:1.2em;font-size:12px;letter-spacing:.1em;color:var(--sub);text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:2px}
 </style>
 </head>
 <body>
@@ -219,7 +221,7 @@
         <button type="button" id="copybtn">文面をコピーする</button>
         <p class="note" id="err" role="alert" style="color:#8A2B2B"></p>
         <p class="note" id="done" role="status" style="display:none;color:var(--ink);font-size:15px"></p>
-        <p class="note">送信すると、入力した内容がトキノアトに届き、控えのメールが自動で届きます。<br>送信できない場合は、文面をコピーして、次のアドレスへお送りください。<br><span class="em"><a href="#" role="button">メールアドレスを表示する</a></span></p>
+        <p class="note">送信すると、入力した内容がトキノアトに届き、控えのメールが自動で届きます。<br>送信できない場合は、文面をコピーして、次のアドレスへお送りください。<br><span class="em"><a href="#" role="button" aria-label="メールを作成する（メールソフトが開きます）"><img src="/img/mail.png" width="203" height="24" alt="メールアドレス（画像）"></a><a class="gm" href="#" role="button">Gmailで開く</a></span></p>
         <textarea id="out" readonly aria-label="入力した内容"></textarea>
       </div>
     </form>
@@ -292,12 +294,9 @@
 (function(){
   var a=['contact','tokinoato.com'].join('@');
   document.querySelectorAll('.em').forEach(function(w){
-    var c=w.querySelector('a');
-    c.addEventListener('click',function(ev){
-      ev.preventDefault();
-      var l=document.createElement('a');l.href='mailto:'+a;l.textContent=a;
-      w.textContent='';w.appendChild(l);
-    });
+    var c=w.querySelector('a'),g=w.querySelector('a.gm');
+    c.addEventListener('click',function(ev){ev.preventDefault();location.href='mailto:'+a;});
+    if(g)g.addEventListener('click',function(ev){ev.preventDefault();window.open('https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(a),'_blank','noopener');});
   });
 })();
 </script>

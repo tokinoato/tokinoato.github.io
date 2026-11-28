@@ -306,9 +306,8 @@
 
     <section class="band contact" aria-labelledby="h-contact"><div class="inner reveal">
       <h2 id="h-contact">CONTACT</h2>
-      <p>撮影および制作に関する<br class="sp-only">ご依頼・ご相談は、メールにて承ります。</p>
-      <a class="mail" href="/request/">項目を選んで相談する</a>
-      <p class="req">メール　<span class="em"><a href="#" role="button">メールアドレスを表示する</a></span></p>
+      <p>撮影および制作に関する<br class="sp-only">ご依頼・ご相談は、フォームにて承ります。</p>
+      <a class="mail" href="/request/">フォームから相談する</a>
     </div></section>
   </main>
 
@@ -344,19 +343,6 @@
     },{threshold:0.15});
     els.forEach(function(e){io.observe(e)});
   })();
-</script>
-<script>
-(function(){
-  var a=['contact','tokinoato.com'].join('@');
-  document.querySelectorAll('.em').forEach(function(w){
-    var c=w.querySelector('a');
-    c.addEventListener('click',function(ev){
-      ev.preventDefault();
-      var l=document.createElement('a');l.href='mailto:'+a;l.textContent=a;
-      w.textContent='';w.appendChild(l);
-    });
-  });
-})();
 </script>
 </body>
 </html>
