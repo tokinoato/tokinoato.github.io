@@ -170,8 +170,6 @@
   .form button:hover,.form button:focus-visible{background:#6E747A;color:#fff;border-color:#6E747A}
   .form .note{font-size:13px;color:var(--sub);margin:16px 0 0}
   #out{display:none;margin-top:24px}
-  .em label{cursor:pointer}
-  .em input{margin-right:.5em;vertical-align:middle}
 </style>
 </head>
 <body>
@@ -187,7 +185,7 @@
     <p class="lead">トキノアト（代表 高田ナオキ）は、お預かりした個人情報を次のとおり取り扱います。</p>
 
     <h2>取得する情報</h2>
-    <p>お問い合わせやご依頼のメールでいただく、お名前、会社名、メールアドレス、ご相談の内容。</p>
+    <p>相談フォームやメールでいただく、お名前、会社名、メールアドレス、WebサイトやSNSのURL、ご相談の内容。</p>
 
     <h2>利用の目的</h2>
     <ul>
@@ -205,6 +203,7 @@
 
     <h2>保管と安全管理</h2>
     <p>お預かりした情報は、漏えいや紛失が起きないよう、適切に管理します。</p>
+    <p>相談フォームから送信された内容は、Googleのサービス（Google Workspace）を通じて受け取り、保管します。</p>
 
     <h2>このサイトについて</h2>
     <p>このサイトは、アクセス解析や広告のためのCookieを使っていません。文字の表示にGoogle Fontsを利用しており、表示の際にGoogleのサーバーと通信します。</p>
@@ -213,7 +212,7 @@
     <p>ご自身の情報の開示、訂正、利用の停止、削除を希望される場合は、下の窓口にご連絡ください。ご本人であることを確認のうえ、対応します。運営者の所在地は、ご請求があれば遅滞なくお知らせします。</p>
 
     <h2>お問い合わせ窓口</h2>
-    <p>トキノアト　<span class="em"><label><input type="checkbox"> 私はロボットではありません（チェックでメールアドレスを表示）</label></span></p>
+    <p>トキノアト　<span class="em"><a href="#" role="button">メールアドレスを表示する</a></span></p>
 
     <p class="small" style="margin-top:3em">制定：2026年11月</p>
   </div>
@@ -229,9 +228,9 @@
 (function(){
   var a=['contact','tokinoato.com'].join('@');
   document.querySelectorAll('.em').forEach(function(w){
-    var c=w.querySelector('input');
-    c.addEventListener('change',function(){
-      if(!c.checked)return;
+    var c=w.querySelector('a');
+    c.addEventListener('click',function(ev){
+      ev.preventDefault();
       var l=document.createElement('a');l.href='mailto:'+a;l.textContent=a;
       w.textContent='';w.appendChild(l);
     });

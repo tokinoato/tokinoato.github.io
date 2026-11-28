@@ -173,8 +173,6 @@
   .form button:hover,.form button:focus-visible{background:#6E747A;color:#fff;border-color:#6E747A}
   .form .note{font-size:13px;color:var(--sub);margin:16px 0 0}
   #out{display:none;margin-top:24px}
-  .em label{cursor:pointer}
-  .em input{margin-right:.5em;vertical-align:middle}
 </style>
 </head>
 <body>
@@ -194,7 +192,7 @@
       <div><dt>所在地</dt><dd>愛知県名古屋市</dd></div>
       <div><dt>事業内容</dt><dd>広告撮影、美術品撮影、撮影ディレクション<br>会社案内・採用ページ・動画の制作</dd></div>
       <div><dt>対応地域</dt><dd>名古屋を中心に、東海三県（愛知・岐阜・三重）<br>撮影内容によっては全国</dd></div>
-      <div><dt>連絡先</dt><dd><span class="em"><label><input type="checkbox"> 私はロボットではありません（チェックでメールアドレスを表示）</label></span></dd></div>
+      <div><dt>連絡先</dt><dd><span class="em"><a href="#" role="button">メールアドレスを表示する</a></span></dd></div>
     </dl>
     <p class="small" style="margin-top:2.4em"><a href="/#h-profile">代表の経歴を見る →</a></p>
   </div>
@@ -210,9 +208,9 @@
 (function(){
   var a=['contact','tokinoato.com'].join('@');
   document.querySelectorAll('.em').forEach(function(w){
-    var c=w.querySelector('input');
-    c.addEventListener('change',function(){
-      if(!c.checked)return;
+    var c=w.querySelector('a');
+    c.addEventListener('click',function(ev){
+      ev.preventDefault();
       var l=document.createElement('a');l.href='mailto:'+a;l.textContent=a;
       w.textContent='';w.appendChild(l);
     });

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>項目を選んで相談する｜トキノアト</title>
-<meta name="description" content="撮影と制作のご相談。撮るもの、使用用途、場所、時期ご予算などの項目を選ぶと、メールの文面ができます。">
+<meta name="description" content="撮影と制作のご相談。撮るもの、使用用途、場所、時期、ご予算などを入力して送信すると、概算の金額をご返答します。">
 <link rel="canonical" href="https://tokinoato.com/request/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="トキノアト">
 <meta property="og:url" content="https://tokinoato.com/request/">
 <meta property="og:title" content="項目を選んで相談する｜トキノアト">
-<meta property="og:description" content="撮影と制作のご相談。撮るもの、使用用途、場所、時期ご予算などの項目を選ぶと、メールの文面ができます。">
+<meta property="og:description" content="撮影と制作のご相談。撮るもの、使用用途、場所、時期、ご予算などを入力して送信すると、概算の金額をご返答します。">
 <meta property="og:image" content="https://tokinoato.com/ogp_top.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -170,8 +170,6 @@
   .form button:hover,.form button:focus-visible{background:#6E747A;color:#fff;border-color:#6E747A}
   .form .note{font-size:13px;color:var(--sub);margin:16px 0 0}
   #out{display:none;margin-top:24px}
-  .em label{cursor:pointer}
-  .em input{margin-right:.5em;vertical-align:middle}
 </style>
 </head>
 <body>
@@ -183,16 +181,26 @@
 <main>
   <div class="page">
     <h1>項目を選んで相談する</h1>
-    <p class="lead">＊の項目はご記入ください。最後のボタンで、メールの文面ができます。</p>
+    <p class="lead">＊の項目はご記入ください。送信すると、控えのメールが自動で届きます。</p>
 
     <form class="form" id="f" onsubmit="return false">
-      <fieldset><legend>会社名・お名前 ＊</legend>
-        <input type="text" name="会社名・お名前" autocomplete="organization">
+      <fieldset><legend>お名前 ＊</legend>
+        <input type="text" name="お名前" autocomplete="name">
       </fieldset>
+      <fieldset><legend>会社名</legend>
+        <input type="text" name="会社名" autocomplete="organization">
+      </fieldset>
+      <fieldset><legend>メールアドレス ＊</legend>
+        <input type="email" name="メールアドレス" autocomplete="email" inputmode="email">
+      </fieldset>
+      <fieldset><legend>WebサイトまたはSNSのURL ＊</legend>
+        <input type="text" name="WebサイトまたはSNS" autocomplete="url" placeholder="会社のWebサイト、SNSなど。ない場合は「なし」">
+      </fieldset>
+      <input type="text" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
       <fieldset><legend>撮るもの</legend><div><label class="opt"><input type="checkbox" name="撮るもの" value="人物"> 人物</label><label class="opt"><input type="checkbox" name="撮るもの" value="商品"> 商品</label><label class="opt"><input type="checkbox" name="撮るもの" value="建築・施設"> 建築・施設</label><label class="opt"><input type="checkbox" name="撮るもの" value="美術作品・工芸作品"> 美術作品・工芸作品</label><label class="opt"><input type="checkbox" name="撮るもの" value="その他"> その他</label></div></fieldset>
       <fieldset><legend>使用用途 ＊</legend><div><label class="opt"><input type="checkbox" name="使用用途" value="広告"> 広告</label><label class="opt"><input type="checkbox" name="使用用途" value="会社案内"> 会社案内</label><label class="opt"><input type="checkbox" name="使用用途" value="Webサイト"> Webサイト</label><label class="opt"><input type="checkbox" name="使用用途" value="採用"> 採用</label><label class="opt"><input type="checkbox" name="使用用途" value="図録・作品集"> 図録・作品集</label><label class="opt"><input type="checkbox" name="使用用途" value="オンライン販売"> オンライン販売</label><label class="opt"><input type="checkbox" name="使用用途" value="その他"> その他</label></div></fieldset>
       <fieldset><legend>あわせて頼みたいこと</legend><div><label class="opt"><input type="checkbox" name="あわせて頼みたいこと" value="モデル"> モデル</label><label class="opt"><input type="checkbox" name="あわせて頼みたいこと" value="ヘアメイク"> ヘアメイク</label><label class="opt"><input type="checkbox" name="あわせて頼みたいこと" value="スタイリスト"> スタイリスト</label><label class="opt"><input type="checkbox" name="あわせて頼みたいこと" value="スタジオ"> スタジオ</label><label class="opt"><input type="checkbox" name="あわせて頼みたいこと" value="デザイン"> デザイン</label><label class="opt"><input type="checkbox" name="あわせて頼みたいこと" value="Web"> Web</label><label class="opt"><input type="checkbox" name="あわせて頼みたいこと" value="動画"> 動画</label></div></fieldset>
-      <fieldset><legend>撮影の場所</legend>
+      <fieldset><legend>撮影の場所 ＊</legend>
         <input type="text" name="撮影の場所" placeholder="例：名古屋市内の自社工場">
       </fieldset>
       <fieldset><legend>希望の時期 ＊</legend>
@@ -207,47 +215,67 @@
         <textarea name="ご相談の内容"></textarea>
       </fieldset>
       <div class="actions">
-        <button type="button" id="mailbtn">メールの文面を作る</button>
+        <button type="button" id="sendbtn">送信する</button>
         <button type="button" id="copybtn">文面をコピーする</button>
         <p class="note" id="err" role="alert" style="color:#8A2B2B"></p>
-        <p class="note">ボタンを押すと、お使いのメールソフトが開きます。送信するまで、内容はどこにも送られません。<br>メールソフトが開かない場合は、文面をコピーして、次のアドレスへお送りください。<br><span class="em"><label><input type="checkbox"> 私はロボットではありません（チェックでメールアドレスを表示）</label></span></p>
-        <textarea id="out" readonly aria-label="メールの文面"></textarea>
+        <p class="note" id="done" role="status" style="display:none;color:var(--ink);font-size:15px"></p>
+        <p class="note">送信すると、入力した内容がトキノアトに届き、控えのメールが自動で届きます。<br>送信できない場合は、文面をコピーして、次のアドレスへお送りください。<br><span class="em"><a href="#" role="button">メールアドレスを表示する</a></span></p>
+        <textarea id="out" readonly aria-label="入力した内容"></textarea>
       </div>
     </form>
   </div>
 </main>
 <script>
 (function(){
-  var f=document.getElementById('f'),out=document.getElementById('out');
-  var order=['会社名・お名前','撮るもの','使用用途','あわせて頼みたいこと','撮影の場所','希望の時期','当日の立ち会い','ご予算の目安','ご依頼の状況','ご相談の内容'];
-  var need=['会社名・お名前','使用用途','希望の時期','ご予算の目安'],err=document.getElementById('err');
+  var ENDPOINT='https://script.google.com/macros/s/AKfycbw2VJRFDuh8SR-kIyAOVVnbX9U7wEu4KH2QzmR3OWqxRFulFbxIPIKOv_Is3jyTJ3pz-A/exec';
+  var f=document.getElementById('f'),out=document.getElementById('out'),err=document.getElementById('err'),done=document.getElementById('done'),btn=document.getElementById('sendbtn');
+  var order=['お名前','会社名','メールアドレス','WebサイトまたはSNS','撮るもの','使用用途','あわせて頼みたいこと','撮影の場所','希望の時期','当日の立ち会い','ご予算の目安','ご依頼の状況','ご相談の内容'];
+  function val(n){var e=f.querySelector('[name="'+n+'"]');return e?e.value.trim():'';}
+  function picked(n){var v=[];f.querySelectorAll('[name="'+n+'"]').forEach(function(e){if(e.checked)v.push(e.value);});return v;}
+  function get(n){var e=f.querySelector('[name="'+n+'"]');if(!e)return '';return (e.type==='checkbox'||e.type==='radio')?picked(n).join('、'):e.value.trim();}
+  // でたらめな入力をはじく：2文字以上、同じ文字のくり返しでない、文字（かな・漢字・英字）を含む
+  var letter=/[A-Za-zＡ-Ｚａ-ｚぁ-んァ-ヶー一-龠々]/, digit=/[0-9０-９一二三四五六七八九十百千万]/;
+  var mailre=/^[A-Za-z0-9._%+\-]+@[A-Za-z0-9\-]+(\.[A-Za-z0-9\-]+)+$/;
+  function sane(v){return v.length>=2&&!/^(.)\1+$/.test(v)&&letter.test(v);}
   function miss(){
-    var m=need.filter(function(n){
-      var ok=false;f.querySelectorAll('[name="'+n+'"]').forEach(function(e){
-        if(e.type==='checkbox'||e.type==='radio'){if(e.checked)ok=true;}else if(e.value.trim())ok=true;});
-      return !ok;});
-    err.textContent=m.length?'次の項目をご記入ください：'+m.join('、'):'';
-    return m.length>0;
+    var m=[],w=[];
+    var na=val('お名前');if(!na)m.push('お名前');else if(!sane(na))w.push('お名前');
+    var co=val('会社名');if(co&&!sane(co))w.push('会社名');
+    var ml=val('メールアドレス');if(!ml)m.push('メールアドレス');else if(!mailre.test(ml))w.push('メールアドレス（形式をご確認ください）');
+    var ws=val('WebサイトまたはSNS');if(!ws)m.push('WebサイトまたはSNSのURL');else if(ws.length<2)w.push('WebサイトまたはSNSのURL');
+    if(!picked('使用用途').length)m.push('使用用途');
+    var pl=val('撮影の場所');if(!pl)m.push('撮影の場所');else if(!sane(pl))w.push('撮影の場所');
+    var tm=val('希望の時期');if(!tm)m.push('希望の時期');else if(tm.length<2||/^(.)\1+$/.test(tm)||!(letter.test(tm)||digit.test(tm)))w.push('希望の時期');
+    var bu=val('ご予算の目安');if(!bu)m.push('ご予算の目安');else if(!digit.test(bu))w.push('ご予算の目安（金額を数字でご記入ください）');
+    var t=[];
+    if(m.length)t.push('次の項目をご記入ください：'+m.join('、'));
+    if(w.length)t.push('次の項目の内容をご確認ください：'+w.join('、'));
+    err.textContent=t.join('　');
+    return t.length>0;
   }
   function body(){
-    var lines=[];
-    order.forEach(function(n){
-      var els=f.querySelectorAll('[name="'+n+'"]'),v=[];
-      els.forEach(function(e){
-        if(e.type==='checkbox'||e.type==='radio'){if(e.checked)v.push(e.value);}
-        else if(e.value.trim())v.push(e.value.trim());
-      });
-      lines.push('■'+n+'\n'+(v.length?v.join('、'):'（未記入）'));
-    });
-    return lines.join('\n\n');
+    return order.map(function(n){return '■'+n+'\n'+(get(n)||'（未記入）');}).join('\n\n');
   }
-  document.getElementById('mailbtn').addEventListener('click',function(){
-    if(miss())return;
-    var b=body();out.value=b;out.style.display='block';
-    location.href='mailto:'+['contact','tokinoato.com'].join('@')+'?subject='+encodeURIComponent('撮影のご相談')+'&body='+encodeURIComponent(b);
+  function fail(msg){err.textContent=msg;btn.disabled=false;btn.textContent='送信する';out.value=body();out.style.display='block';}
+  btn.addEventListener('click',function(){
+    if(btn.disabled||miss())return;
+    var d={hp:val('hp')};order.forEach(function(n){d[n]=get(n);});
+    btn.disabled=true;btn.textContent='送信しています…';err.textContent='';
+    fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(d),redirect:'follow'})
+      .then(function(r){return r.json();})
+      .then(function(j){
+        if(j&&j.ok){
+          f.querySelectorAll('fieldset,#sendbtn,#copybtn').forEach(function(e){e.style.display='none';});
+          done.style.display='block';
+          done.textContent='送信しました。控えのメールをお送りしましたので、ご確認ください。数分たっても届かない場合は、メールアドレスの入力に誤りがあった可能性があります。';
+          done.scrollIntoView({block:'center'});
+        }else if(j&&j.fields){fail('次の項目の内容をご確認ください：'+j.fields.join('、'));}
+        else if(j&&j.error==='limit'){fail('本日の受付の上限に達しました。恐れ入りますが、下のメールアドレスへ直接お送りください。');}
+        else{fail('送信できませんでした。恐れ入りますが、下の文面をコピーして、メールでお送りください。');}
+      })
+      .catch(function(){fail('送信できませんでした。恐れ入りますが、下の文面をコピーして、メールでお送りください。');});
   });
   document.getElementById('copybtn').addEventListener('click',function(){
-    if(miss())return;
     var b=body();out.value=b;out.style.display='block';out.select();
     try{navigator.clipboard.writeText(b);}catch(e){try{document.execCommand('copy');}catch(e2){}}
   });
@@ -264,9 +292,9 @@
 (function(){
   var a=['contact','tokinoato.com'].join('@');
   document.querySelectorAll('.em').forEach(function(w){
-    var c=w.querySelector('input');
-    c.addEventListener('change',function(){
-      if(!c.checked)return;
+    var c=w.querySelector('a');
+    c.addEventListener('click',function(ev){
+      ev.preventDefault();
       var l=document.createElement('a');l.href='mailto:'+a;l.textContent=a;
       w.textContent='';w.appendChild(l);
     });
